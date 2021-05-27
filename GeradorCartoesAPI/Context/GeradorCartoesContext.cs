@@ -8,9 +8,9 @@ namespace GeradorCartoesAPI.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Cartao> Cartoes { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public GeradorCartoesContext(DbContextOptions<GeradorCartoesContext> options) : base(options)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=GeradorCartoesDb;Integrated Security=true");
+
         }
     }
 }
