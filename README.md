@@ -189,7 +189,7 @@ O resultado é o número de cartão (BIN + Identificador + Verificador) **400000
 
 ### Criando classe estática com o algoritmo
 
-Criamos a pasta ```Utils``` e a classe ``Gerador.cs`` com modificador static dentro dela.
+Criamos a pasta ```Utils``` e a classe ``Gerador.cs`` com modificador static.
 
 ```c#
 public static class Gerador
