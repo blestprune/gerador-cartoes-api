@@ -2,8 +2,6 @@
 
 
 
-[TOC]
-
 ## Desafio
 
 Escreva um artigo, em formato de blog post sobre um projeto C# com .NET Core. Você deverá descrever o passo-a-passo para a criação de uma API REST que fornece um sistema de geração de número de cartão de crédito virtual.
