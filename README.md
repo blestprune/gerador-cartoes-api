@@ -24,7 +24,7 @@ Projeto desenvolvido utilizando abordagem Code First com ASP.NET Core em .NET 5,
 
 Ao criarmos um novo projeto no Visual Studio 2019, utilizamos o template ASP.NET Core Web API com o .NET 5.0 como framework. Também deixamos marcada a opção para habilitar o suporte ao OpenAPI, que irá adicionar o Swagger UI logo de início ao nosso projeto. As outras opções deixamos no padrão.
 
-Ao gerar o projeto, podemos deletar as classe WeatherForecast e WeatherForecastController que vêm como exemplo nesse template. 
+Ao gerar o projeto, podemos deletar as classes ```WeatherForecast.cs``` e ```WeatherForecastController.cs``` que vêm como exemplo nesse template. 
 
 Os próximos passos serão para um projeto iniciado com o nome ```GeradorCartoesAPI``` e todos os imports serão feitos através da ajuda do IntelliSense, quando necessário.
 
@@ -131,7 +131,7 @@ Podemos explorar o banco criado através do *SQL Server Object Explorer* pelo at
 
 ## Criando ViewModels
 
-Para não precisar exibir todas as informações dos cartões quando solicitado, iremos criar uma ViewModel de cartões, que irá conter apenas a propriedades que queremos que sejam exibidas através do GET.
+Para não precisar exibir todas as informações dos cartões quando solicitado, iremos criar uma ViewModel de cartões, que irá conter apenas as propriedades que queremos que sejam exibidas através do GET.
 
 Na nossa solução, criamos a pasta ```ViewModels``` e dentro dela criamos a classe ```CartaoViewModels``` e dentro dela definimos a classe ```ReadCartaoViewModel``` que irá conter apenas as propriedades que queremos que sejam exibidas de um Cartão.
 
@@ -174,7 +174,7 @@ Do sétimo ao penúltimo dígito temos o identificador da conta. Pode ter de 9 a
 
 O último dígito é usado para validar um número de cartão de crédito. Ele é gerado utilizando o algoritmo Luhn.
 
-No exemplo abaixo, ainda sem o dígito verificador, geramos o número do cartão (BIN + Identificador) 400000844943340 e aplicamos o algoritmo conforme as etapas explícitas na tabela.
+No exemplo abaixo, ainda sem o dígito verificador, geramos o número do cartão (BIN + Identificador) 400000844943340 e aplicamos o algoritmo conforme as etapas explicitadas na tabela abaixo:
 
 |                                   |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  | Total |
 | :-------------------------------- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :---: |
@@ -197,7 +197,7 @@ public static class Gerador
 }
 ```
 
-E iremos trabalhar dentro dessa classe.
+Iremos trabalhar dentro dessa classe.
 
 Definimos as constantes como explicado acima:
 
@@ -246,7 +246,7 @@ private static int GerarVerificador(string numeroCartao)
 }
 ```
 
-Ambos esses métodos são privados a serem utilizados internamente apenas pelo método público abaixo que irá realizar a junção das três partes do número do cartão e retornar esse número em formato de string:
+Ambos os métodos são privados e deverão ser utiliados apenas pelo método público abaixo, que irá realizar a junção das três partes do número do cartão e retornar esse número em formato de string:
 
 ```c#
 public static string GerarCartao()
